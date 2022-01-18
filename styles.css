@@ -139,7 +139,7 @@ body {
     }
 }
 .road {
-    height: 150px;
+    height: 200px;
     width: 300%;
     background-image: url(road.jpeg);
     display: block; 
