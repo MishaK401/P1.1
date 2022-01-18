@@ -1,0 +1,169 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+@-webkit-keyframes wheel-animation {
+    from { transform: rotate(360deg)}
+    to {transform: rotate(0deg);}
+}
+
+@-moz-keyframes wheel-animation {
+    from { transform: rotate(360deg)}
+    to {transform: rotate(0deg);}
+}
+
+@keyframes wheel-animation {
+    from { transform: rotate(360deg)}
+    to {transform: rotate(0deg);}
+}
+
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(100%); }
+    to { -moz-transform: translateX(-100%); }
+  }
+  
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(100%)}
+    to { -webkit-transform: translateX(-100%)}
+  }
+  
+  @keyframes my-animation {
+    from {
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+    to {
+      -moz-transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transform: translateX(-100%);
+    }
+}
+
+body {
+    background-image: url(IMG_1942.jpeg);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.scroll-container {
+    margin-left: auto;
+    top: 10%;
+    border: 3px;
+    border-radius: 5px;
+    overflow: hidden;  
+}
+
+.scroll-container:hover {
+    overflow-x: scroll;
+}
+
+#scroll-text {
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    font-weight: bolder;
+    color: rgb(50, 72, 145);
+    margin-top: 5%;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+  
+    -moz-animation: my-animation 65s linear infinite;
+    -webkit-animation: my-animation 65s linear infinite;
+    animation: my-animation 65s linear infinite;
+}
+
+#scroll-text:hover {
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    margin-top: 5%;
+    clear: both;
+    display: inline-block;
+    overflow: scroll;
+    white-space: nowrap;
+  
+    -moz-animation: my-animation 65s linear infinite paused;
+    -webkit-animation: my-animation 65s linear infinite paused;
+    animation: my-animation 65s linear infinite paused;
+}
+
+.frontwheel {
+    position: absolute;
+    z-index: 1;
+    top: 84.5%;
+    left: 33.8%;
+    max-width: 145px;
+    max-height: 145px;
+    -moz-animation: wheel-animation .5s linear infinite;
+    -webkit-animation: wheel-animation .5s linear infinite;
+    animation: wheel-animation .5s linear infinite;
+}
+
+.rearwheel {
+    
+    position: absolute;
+    z-index: 1;
+    top: 84.5%;
+    left: 62.5%;
+    max-width: 140px;
+    max-height: 140px;
+    -moz-animation: wheel-animation .5s linear infinite;
+    -webkit-animation: wheel-animation .5s linear infinite;
+    animation: wheel-animation .5s linear infinite;
+}
+
+.truck {
+    position: absolute;
+    top: 70%;
+    left: 32%;
+    animation: truck .2s linear infinite
+}
+@keyframes road {
+    0% {transform: translate(0);}
+    100% {
+        transform: translateX(-3400px)  
+    }
+}
+
+@keyframes truck {
+    0% { 
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(-2px);
+    }
+}
+.road {
+    height: 200px;
+    width: 300%;
+    background-image: url(road.jpeg);
+    display: block; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+    background-repeat: repeat-x;
+    animation: road 1s linear infinite reverse
+}
+
+.city {
+    height: 275px;
+    max-width: 800%;
+    background-image: url(Layer\ 6.png);
+    position: absolute;
+    bottom: 195px;
+    left: 0;
+    right: 0;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    z-index: -3;
+    background-repeat: repeat-x;
+    animation: my-animation 5s linear infinite reverse;
+}
