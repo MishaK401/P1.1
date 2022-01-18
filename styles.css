@@ -118,6 +118,7 @@ body {
 
 .truck {
     position: absolute;
+    z-index: 0;
     top: 70%;
     left: 32%;
     animation: truck .2s linear infinite
@@ -138,7 +139,7 @@ body {
     }
 }
 .road {
-    height: 200px;
+    height: 150px;
     width: 300%;
     background-image: url(road.jpeg);
     display: block; 
